@@ -41,3 +41,55 @@ User Input: Relies on accurate input by teachers or designated individuals respo
 Integration: Might rely on integration with other systems (like a school's management software) to synchronize and manage student data effectively.
 
 Attendance Policies: Depends on the school's policies and regulations regarding attendance, such as minimum required attendance percentages or rules for excused absences.
+
+## ER DIAGRAM 
+``` mermaid
+
+---
+title : Student Attendance System
+---
+
+erDiagram
+login ||--|{ student:has
+login{
+    string faculty
+}
+login ||--|{ faculty:has
+login{
+    string student
+}
+courses ||--o{ faculty:teaches
+courses{
+    string course_name
+    int course_id
+    string faculty_name
+}
+courses ||--o{ student:learning
+courses{
+    string course_name
+    int course_id
+    string faculty_name
+}
+student ||--o{ attendence:S
+student {
+    string student_name
+    string email_id
+    int s_id
+    string password
+    }
+
+faculty ||--o{ attendence:acess
+faculty{
+    string faculty_name
+    string email_id
+    string password
+    int f_id
+}
+attendence{
+    int no_of_days_present
+    int percentage
+    int remaining_days
+    int no_of_days_absent
+}
+```
+
