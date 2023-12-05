@@ -122,9 +122,6 @@ classDiagram
     -remaining_days: int
     -no_of_days_absent: int
   }
-
-  Login -- Student: has
-  Login -- Faculty: has
   Courses -- Faculty: teaches
   Courses -- Student: learning
   Student -- Attendence: S
