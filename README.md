@@ -53,9 +53,7 @@ erDiagram
 
 courses ||--o{ faculty:teaches
 courses{
-    string course_name
-    int course_id
-    string faculty_name
+   
 }
 courses ||--o{ student:learning
 courses{
