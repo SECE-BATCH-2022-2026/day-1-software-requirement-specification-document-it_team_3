@@ -50,14 +50,7 @@ title : Student Attendance System
 ---
 
 erDiagram
-login ||--|{ student:has
-login{
-    string faculty
-}
-login ||--|{ faculty:has
-login{
-    string student
-}
+
 courses ||--o{ faculty:teaches
 courses{
     string course_name
@@ -100,11 +93,7 @@ title : Student Attendance System
 ---
 
 classDiagram
-  class Login {
-    -faculty: string
-    -student: string
-  }
-
+  
   class Courses {
     -course_name: string
     -course_id: int
