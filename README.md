@@ -101,37 +101,37 @@ title : Student Attendance System
 
 classDiagram
   class Login {
-    faculty: string
-    student: string
+    -faculty: string
+    -student: string
   }
 
   class Courses {
-    course_name: string
-    course_id: int
-    faculty_name: string
+    -course_name: string
+    -course_id: int
+    -faculty_name: string
   }
 
   class Student {
-    student_name: string
-    email_id: string
-    s_id: int
-    password: string
-    Attendence: Attendence
+    -student_name: string
+    -email_id: string
+    -s_id: int
+    -password: string
+    +Attendence: Attendence
   }
 
   class Faculty {
-    faculty_name: string
-    email_id: string
-    password: string
-    f_id: int
-    Attendence: Attendence
+    -faculty_name: string
+    -email_id: string
+    -password: string
+    -f_id: int
+    +Attendence: Attendence
   }
 
   class Attendence {
-    no_of_days_present: int
-    percentage: int
-    remaining_days: int
-    no_of_days_absent: int
+    -no_of_days_present: int
+    -percentage: int
+    -remaining_days: int
+    -no_of_days_absent: int
   }
 
   Login -- Student: has
@@ -140,4 +140,5 @@ classDiagram
   Courses -- Student: learning
   Student -- Attendence: S
   Faculty -- Attendence: access
+
 
