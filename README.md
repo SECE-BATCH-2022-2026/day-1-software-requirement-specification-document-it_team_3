@@ -53,9 +53,11 @@ erDiagram
 
 courses ||--o{ faculty:teaches
 courses{
-   
+    string course_name
+    int course_id
+    string faculty_name
 }
-courses ||--o{ student:learning
+student ||--o{ courses:learning
 courses{
     string course_name
     int course_id
@@ -82,6 +84,7 @@ attendence{
     int remaining_days
     int no_of_days_absent
 }
+
 ```
 ## class diagram
 ``` mermaid
