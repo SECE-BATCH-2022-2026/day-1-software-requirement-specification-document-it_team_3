@@ -51,17 +51,15 @@ title : Student Attendance System
 
 erDiagram
 
-courses ||--o{ faculty:teaches
+faculty||--o{ courses:teaches
 courses{
     string course_name
     int course_id
-    string faculty_name
+   int f_id
 }
 student ||--o{ courses:learning
 courses{
-    string course_name
-    int course_id
-    string faculty_name
+   
 }
 student ||--o{ attendence:S
 student {
@@ -79,11 +77,12 @@ faculty{
     int f_id
 }
 attendence{
-    int no_of_days_present
-    int percentage
-    int remaining_days
-    int no_of_days_absent
+   string present
+   date date
+   int f_id
+   int s_id
 }
+
 
 ```
 ## class diagram
@@ -118,14 +117,15 @@ classDiagram
   }
 
   class Attendence {
-    -no_of_days_present: int
-    -percentage: int
-    -remaining_days: int
-    -no_of_days_absent: int
+    int s_id
+    int f_id
+    date date
+    string present
   }
   Courses -- Faculty: teaches
   Courses -- Student: learning
   Student -- Attendence: S
   Faculty -- Attendence: access
+
 
 
